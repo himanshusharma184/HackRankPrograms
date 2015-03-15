@@ -1,32 +1,60 @@
 package sort;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
 public class insertIntoSorted {
+    
+    
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		int[] ar = new int[a];
-		for (int i = 0; i < a; i++) {
-			ar[i] = sc.nextInt();
-		}
+    public static void insertIntoSorted(int[] ar) {
 		for (int i = ar.length - 1; i > 0; i--) {
 			if (ar[i] < ar[i - 1]) {
-				int[] p = ar;
+				
 				int c = ar[i];
-				p[i] = p[i - 1];
 				ar[i] = ar[i - 1];
+				
+				print(ar);
+				System.out.println("\n");
 				ar[i - 1] = c;
 
-				System.out.println(Arrays.toString(ar));
+				
 			} else {
-				System.out.println(Arrays.toString(ar));
+				print(ar);
+				System.out.println("\n");
 			}
 		}
-
+		
+    }
+    	private static void print(int[] ar) {
+		for(int i:ar){
+			System.out.print(i+" ");
+		}
+		
 	}
-
+    
+/* Tail starts here */
+     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int s = in.nextInt();
+        int[] ar = new int[s];
+         for(int i=0;i<s;i++){
+            ar[i]=in.nextInt(); 
+         }
+         insertIntoSorted(ar);
+    }
+    
+    
+    private static void printArray(int[] ar) {
+      for(int n: ar){
+         System.out.print(n+" ");
+      }
+        System.out.println("");
+   }
+    
+    
 }
+
