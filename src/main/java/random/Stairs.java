@@ -48,6 +48,7 @@ public class Stairs {
 
 		Stairs m = new Stairs();
 		System.out.println(Arrays.toString((m.getStairs(i).toArray())));
+
 	}
 
 }
